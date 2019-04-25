@@ -37,7 +37,7 @@ int operaSite::pegaSaldo()
 	QNetworkReply *resposta_saldo = gerenciadorConexao.post(*pedido, dadosPedido);
 
 	QEventLoop loop_espera;
-	QObject::connect(resposta_saldo, SIGNAL(finished()), &loop_espera, SLOT(quit()));
+	connect(resposta_saldo, SIGNAL(finished()), &loop_espera, SLOT(quit()));
 	loop_espera.exec();
 
 	dadosPedido.clear();
