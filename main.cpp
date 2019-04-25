@@ -30,5 +30,7 @@ int main(int argc, char *argv[])
 	else
 		cout << QString("Nome de usuário e/ou senha incorretos!").toUtf8() << endl; // Preciso dessa conversão pra UTF-8 para preservar os acentos
 
+	senha.fill('0'); // Sobrescreve a senha com zeros pra não correr o risco dela permanecer na memória
+
 	return 0;
 }
